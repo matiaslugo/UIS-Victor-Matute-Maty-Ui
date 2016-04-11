@@ -1,5 +1,6 @@
 package ar.edu.unq.ciu.gatoEncerrado_ui
 
+import static extension org.uqbar.arena.xtend.ArenaXtendExtensions.*
 import org.uqbar.arena.windows.WindowOwner
 import org.uqbar.arena.windows.SimpleWindow
 import org.uqbar.arena.widgets.Panel
@@ -10,6 +11,10 @@ import org.uqbar.arena.widgets.NumericField
 import ar.edu.unq.ciu.dominio_gatoEncerrado1.GatoEncerradoModel
 import org.uqbar.arena.layout.VerticalLayout
 import org.uqbar.arena.widgets.List
+import ar.edu.unq.ciu.dominio_gatoEncerrado1.Laberinto
+import org.uqbar.arena.bindings.PropertyAdapter
+import org.uqbar.arena.widgets.tables.Table
+import org.uqbar.arena.widgets.Selector
 
 class CrearGatoEncerradoWindow extends SimpleWindow<GatoEncerradoModel> {
 	
@@ -31,13 +36,21 @@ class CrearGatoEncerradoWindow extends SimpleWindow<GatoEncerradoModel> {
 		
 		val Panel laberintosPanel = new Panel(mainPanel)
 		new Label(laberintosPanel).text = "Laberintos"
-		new List<String>(laberintosPanel) => [
-				height = 150
-				width = 270
-			]
+		new List<Laberinto>(laberintosPanel)=>[
+			
+			(items <=> "listaLaberintos").adapter = new PropertyAdapter(Laberinto, "nombreLaberinto")
+			height = 450
+			width = 480
+		]
+		
+		new Button(laberintosPanel) =>[
+			caption = "AgregarLaberinto"
+			onClick [ | new LaberintoWindow(this, this.modelObject).open ]
+		] 
 		
 		val Panel habitacionesPanel = new Panel(mainPanel)
 		new Label (habitacionesPanel).text = "Habitaciones"
+		
 		
 		val Panel accionesPanel = new Panel(mainPanel)
 		new Label (accionesPanel).text = "Acciones"
