@@ -23,7 +23,7 @@ class CrearGatoEncerradoWindow extends SimpleWindow<CrearLaberintoAppModel> {
 		new(WindowOwner owner, CrearLaberintoAppModel sistema){
 		super(owner, sistema)
 		title = "Aca hay gato encerrado"
-		taskDescription = "Hola Beca administra tus laberintos"
+		taskDescription = "Hola Beca administra tus laberintos" 
 	}
 
 	override protected createFormPanel(Panel mainPanel){

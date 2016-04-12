@@ -23,7 +23,7 @@ class LaberintoWindow extends Dialog<Laberinto> {
 	override protected createFormPanel(Panel mainPanel){
 		 
 		title = "Agregar Nuevo Laberinto"
-		mainPanel.layout = new VerticalLayout 
+		mainPanel.layout = new VerticalLayout
 				
 		new Label(mainPanel).text = "Nombre:"
 		new TextBox(mainPanel) => [
