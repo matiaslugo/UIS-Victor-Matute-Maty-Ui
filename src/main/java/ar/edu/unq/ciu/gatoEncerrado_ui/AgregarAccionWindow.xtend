@@ -27,17 +27,24 @@ class AgregarAccionWindow extends Dialog<Accion>{
 		
 		new Button(principalPanel) => [
 			caption = "Agregar accion de ir a otra habitacion"
-			onClick [ | new MoverseAHabitacion(this, this.habitacion, this.laberinto).open ]
+			onClick [ | 
+				new MoverseAHabitacion(this, this.habitacion, this.laberinto).open
+				this.close
+			]
 		]
 		
 		new Button(principalPanel) => [
 			caption = "Agregar accion de agarrar un elemento"
-			onClick [ | ]
+			onClick [ | 
+				this.close
+			]
 		]
 		
 		new Button(principalPanel) => [
 			caption = "Agregar accion de usar un elemento"
-			onClick [ | ]
+			onClick [ | 
+				this.close
+			]
 		]
 	}
 	

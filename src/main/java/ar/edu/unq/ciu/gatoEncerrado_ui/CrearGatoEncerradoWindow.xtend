@@ -123,7 +123,7 @@ class CrearGatoEncerradoWindow extends SimpleWindow<CrearLaberintoAppModel> {
 		new Label(accionesPanel).text = "Acciones"
 		
 		new List<Accion>(accionesPanel)=>[
-			(items <=> "nuevaHabitacion.listaAcciones").adapter = new PropertyAdapter(Habitacion, "listaAcciones")
+			(items <=> "nuevaHabitacion.listaAcciones").adapter = new PropertyAdapter(Accion, "accion")
 			height = 250
 			width = 400
 			value <=> "nuevaAccion"
