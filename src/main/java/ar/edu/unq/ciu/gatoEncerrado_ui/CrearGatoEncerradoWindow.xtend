@@ -141,7 +141,7 @@ class CrearGatoEncerradoWindow extends SimpleWindow<CrearLaberintoAppModel> {
 		new Button(horizontalPanel4) =>[
 			caption = "Quitar accion"
 			width = 210
-			onClick [ | ]
+			onClick [ | this.modelObject.eliminarAccion ]
 		]
 		
 	}

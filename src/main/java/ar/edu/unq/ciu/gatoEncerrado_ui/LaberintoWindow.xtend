@@ -10,7 +10,6 @@ import org.uqbar.arena.widgets.Button
 import static extension org.uqbar.arena.xtend.ArenaXtendExtensions.*
 import ar.edu.unq.ciu.dominio_gatoEncerrado1.Laberinto
 import ar.edu.unq.ciu.dominio_gatoEncerrado1.CrearLaberintoAppModel
-import org.uqbar.arena.widgets.Selector
 
 class LaberintoWindow extends Dialog<Laberinto> {
 	
