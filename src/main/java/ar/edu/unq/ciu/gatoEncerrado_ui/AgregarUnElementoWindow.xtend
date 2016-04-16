@@ -11,11 +11,15 @@ import ar.edu.unq.ciu.dominio_gatoEncerrado1.Item
 import org.uqbar.arena.widgets.TextBox
 import org.uqbar.arena.layout.HorizontalLayout
 import org.uqbar.arena.widgets.Button
+import ar.edu.unq.ciu.dominio_gatoEncerrado1.Laberinto
 
 class AgregarUnElementoWindow extends Dialog<AccionDeAgarrarUnElemento>{
 	
-	new(WindowOwner owner, Habitacion hab) {
+	var Laberinto laberinto 
+	
+	new(WindowOwner owner, Laberinto lab, Habitacion hab) {
 		super(owner, new AccionDeAgarrarUnElemento(hab))
+		laberinto = lab
 	}
 	
 	override protected createFormPanel(Panel mainPanel) {
@@ -34,6 +38,7 @@ class AgregarUnElementoWindow extends Dialog<AccionDeAgarrarUnElemento>{
 			caption = "Agregar"
 			onClick [ |
 				this.modelObject.habitacion.agregarAccion(this.modelObject)
+				this.laberinto.agregarItem(this.modelObject.item)
 				this.close
 			]
 		]

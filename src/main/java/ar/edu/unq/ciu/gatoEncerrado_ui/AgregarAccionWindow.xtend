@@ -36,7 +36,7 @@ class AgregarAccionWindow extends Dialog<Accion>{
 		new Button(principalPanel) => [
 			caption = "Agregar accion de agarrar un elemento"
 			onClick [ | 
-				new AgregarUnElementoWindow(this, this.habitacion).open
+				new AgregarUnElementoWindow(this,this.laberinto, this.habitacion).open
 				this.close
 			]
 		]
@@ -44,6 +44,7 @@ class AgregarAccionWindow extends Dialog<Accion>{
 		new Button(principalPanel) => [
 			caption = "Agregar accion de usar un elemento"
 			onClick [ | 
+				new UsarUnElementoWindow(this,this.laberinto,this.habitacion).open
 				this.close
 			]
 		]
