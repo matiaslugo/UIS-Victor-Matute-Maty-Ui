@@ -114,12 +114,13 @@ class CrearGatoEncerradoWindow extends SimpleWindow<CrearLaberintoAppModel> {
 		
 		val Panel horizontalPanel3 = new Panel(accionesPanel)
 		horizontalPanel3.layout = new HorizontalLayout
+		
 		new CheckBox(horizontalPanel3).value <=> "nuevaHabitacion.esFinal"
 		new Label(horizontalPanel3) => [
 			height = 50
 			text = "Es final?"
 		]
-		
+	
 		new Label(accionesPanel).text = "Acciones"
 		
 		new List<Accion>(accionesPanel)=>[

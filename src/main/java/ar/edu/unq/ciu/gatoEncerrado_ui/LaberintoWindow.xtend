@@ -29,10 +29,12 @@ class LaberintoWindow extends Dialog<Laberinto> {
 		new TextBox(mainPanel) => [
 			value <=> "nombreLaberinto"
 			width = 200
+		
 		]
 		new Button(mainPanel)=>[
 			caption = "Aceptar"
 			onClick [ |
+				this.appModel.laberintosConElMismoNombre(this.modelObject.nombreLaberinto)
 				this.appModel.agregarLaberintoNuevo(this.modelObject)
 				this.close
 			]
